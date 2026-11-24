@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Wisconsin Cheese Festival Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Schoolbell&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Wisconsin Craft Beer & Cheese Trail</h1>
+    </header>
+
+    <nav><!--Consistent navigation added-->
+        <p><a href="#text" class="skip-link">Skip to main content</a></p>
+        <ul><!--Unordered List-->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="trail-stops.html">Trail Stops</a></li>
+            <li><a href="plan-your-visit.html" aria-current="page">Plan Your Visit</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <a href="gallery.html">
+            <img src="images/display.png" alt="Several wheels of cheese on display for patrons">
+        </a>
+        <section id="text">
+            <h2>Plan Your Trip!</h2>
+        </section>
+        <form>
+            <fieldset>
+                <legend>Contact Information</legend><!--Input type 1 (text)-->
+
+                <div class="form-layout">
+
+                    <!--Left Column-->
+                    <div class="form-column name-column">
+
+                        <div class="form-row">
+                            <label for="first">First Name:</label>
+                            <input type="text" id="first" name="first" placeholder="First Name" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="middle">Middle Initial:</label>
+                            <input type="text" id="middle" name="middle" placeholder="M" maxlength="1">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="last">Last Name:</label>
+                            <input type="text" id="last" name="last" placeholder="Last Name" required>
+                        </div>
+
+                    </div>
+
+                    <!--Right Column-->
+                    <div class="form-column">
+
+                        <div class="form-row">
+                            <label for="phone">Phone Number:</label><!--Input type 2 (tel)-->
+                            <input type="tel" id="phone" name="phone" placeholder="(XXX)-XXX-XXXX" required>
+                        </div>
+
+                        <div class="form-row phone-type">
+                            <input type="radio" id="home" name="type" value="home"><!--Input type 3 (radio)-->
+                            <label for="home">Home</label>
+                            <input type="radio" id="work" name="type" value="work">
+                            <label for="work">Work</label>
+                            <input type="radio" id="mobile" name="type" value="mobile">
+                            <label for="mobile">Cell</label>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="email">Email:</label><!--Input type 4 (email)-->
+                            <input type="email" id="email" name="email" placeholder="YourEmail@Internet.com" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="age">Age Verification:</label>
+                            <input type="checkbox" id="age" name="age" required><!--Input type 5 (checkbox)-->
+                            <label for="age">Over 21</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>RSVP</legend>
+                <p>The Wisconsin Craft Beer & Cheese Trail happens every 5th day of each month.</p>
+                <div class="form-row centered-row">
+                    <label for="month">Month:</label><!--Input type 6 (dropdown)-->
+                    <select name="month" id="month">
+                        <option value="jan">Jan</option>
+                        <option value="feb">Feb</option>
+                        <option value="mar">Mar</option>
+                        <option value="apr">Apr</option>
+                        <option value="may">May</option>
+                        <option value="jun">Jun</option>
+                        <option value="jul">Jul</option>
+                        <option value="aug">Aug</option>
+                        <option value="sep">Sep</option>
+                        <option value="oct">Oct</option>
+                        <option value="nov">Nov</option>
+                        <option value="dec">Dec</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Payment Information</legend>
+                <p>The cost for the tour is $20.00.</p>
+                <div class="small">
+                    Please do not actually enter any information. This site is fictional.
+                </div>
+                <div class="form-layout">
+                    <div class="form-column">
+                        <div class="form-row">
+                            <label for="name">Cardholder:</label>
+                            <input type="text" id="name" name="name" placeholder="Cardholder Name Here" required>
+                        </div>
+                        <div class="form-row card-number">
+                            <label for="cc1">Card number:</label>
+                            <input type="text" id="cc1" name="cc1" placeholder="XXXX" maxlength="4" required>
+                            <label for="cc2"> - </label>
+                            <input type="text" id="cc2" name="cc2" placeholder="XXXX" maxlength="4" required>
+                            <label for="cc3"> - </label>
+                            <input type="text" id="cc3" name="cc3" placeholder="XXXX" maxlength="4" required>
+                            <label for="cc4"> - </label>
+                            <input type="text" id="cc4" name="cc4" placeholder="XXXX" maxlength="4" required>
+                        </div>
+                    </div>
+                    <div class="form-column">
+                        <div class="form-row">
+                            <label for="ccdate">Expiry Date:</label><!--Input type 7 (month)-->
+                            <input type="month" id="ccdate" name="ccdate" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="CCV">CCV:</label><!--Input type 8 (password)-->
+                            <input type="password" id="CCV" name="CCV" placeholder="000" maxlength="3" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="zip">Billing Zip Code:</label><!--Input type 9 (number)-->
+                            <input type="number" id="zip" name="zip" placeholder="00000" required>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2026 Craft Beer & Cheese Trail, LLC. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

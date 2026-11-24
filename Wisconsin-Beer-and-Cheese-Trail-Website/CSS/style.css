@@ -1,0 +1,406 @@
+/* >>>> Requirements <<<< */
+/*[x] css/style.css linked from every page; zero inline styles and zero <style> blocks anywhere in the project.*/
+/*[x] Section comments organizing the stylesheet*/
+/*[x] Minimum 4 CSS custom properties in :root, used throughout the stylesheet via var().*/
+/*[x] {box-sizing:border-box;} as the first rule*/
+/*[x] Google font linked with proper three-layer fallback stack (web font, system fallback, generic)*/
+/*[x] Full typographic scale in rem (h1, h2, h3, body, small)*/
+/*[x] Flexbox navigation with hover, focus-visible, and aria current="page" states all styled*/
+/*[x] Global *:focus-visible rule covering every interactive element*/
+/*[x] Skip navigation link that becomes visible on keyboard focus*/
+/*[x] .container centering pattern applied consistently*/
+/*[x] All color combinations pass 4:5:1 contrast- document ratios in code journal*/
+/*Lighthouse accessibility score of 80 or higher on the live GitHub Pages URL - Screenshot required*/
+/*Submit both the live GitHub Pages URL and repository URL through Blackboard*/
+
+/* >>>> Colors used: <<<<*/ 
+/* #2E2824 (BG) */
+/* #403832 (alt BG)
+/* #FAF5EB (13:37:1 CR) */
+/* #F4B856 (8:19:1 CR) */
+/* #FFD285 (10:24:1 CR)*/
+
+/* >>>> General <<<< */
+*{
+    box-sizing: border-box;
+}
+:root{
+    --backgroundcolor: #2E2824;
+    --textcolor: #FAF5EB;
+    --linkcolor: #F4B856;
+    --hovercolor: #FFD285;
+    --altrowcolor: #403832;
+    --imageborder: 3px ridge #F4B856;
+    --borderradius: 10px;
+}
+
+/* >>>> Font <<<< */
+h1, h2, h3 {
+    font-family: "Boogaloo", Impact, sans-serif;
+}
+body {
+    font-family: "Schoolbell", "Comic Sans MS", sans-serif;
+}
+h1 {
+    font-size: 3rem;
+    color: var(--linkcolor);
+}
+h2 {
+    font-size: 2.5rem;
+    color: var(--linkcolor);
+}
+h3 {
+    font-size: 2rem;
+    color: var(--linkcolor);
+}
+body {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+small {
+    font-size: 1rem;
+}
+
+/* >>>> Accessibility <<<< */
+*:focus-visible{
+    outline: 2px solid var(--hovercolor);
+    outline-offset: 3px;
+}
+
+.skip-link{
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    border: var(--imageborder);
+    border-radius: 999px;
+    padding: 5px 10px;
+    background-color: var(--backgroundcolor);
+}
+
+.skip-link:focus{
+    top: 10px;
+}
+
+/* >>>> Body <<<< */
+body {
+    background-color: var(--backgroundcolor);
+    color: var(--textcolor);
+    margin: 0;
+    padding: 0;
+}
+
+/* >>>> Container <<<< */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* >>>> Header <<<< */
+header {
+    text-align: center;
+    color: var(--linkcolor);
+    padding: 0.75rem;
+    border-bottom: 8px ridge var(--linkcolor);
+    border-top: 8px ridge var(--linkcolor);
+}
+
+/* >>>> Navigation <<<< */
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul a {
+    display: inline-block;
+    color: var(--linkcolor);
+    background-color: var(--backgroundcolor);
+    border: var(--imageborder);
+    border-radius: 999px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+nav ul a[aria-current="page"] {
+    background-color: var(--textcolor);
+    color: var(--backgroundcolor);
+}
+
+nav ul a:hover, nav ul a:focus {
+    background-color: var(--textcolor);
+    color: var(--backgroundcolor);
+}
+
+/* >>>> Main <<<< */
+main section {
+    margin-bottom: 2rem;
+}
+
+main {
+    text-align: left;
+    line-height: 2rem;
+}
+
+main h2, main h3 {
+    color: var(--linkcolor);
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: var(--imageborder);
+    padding-bottom: 10px;
+}
+
+main p {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+main a {
+    color: var(--linkcolor);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main a:hover,
+main a:focus-visible {
+    color: var(--hovercolor);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* >>>> Images <<<< */
+img {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: var(--imageborder);
+    border-radius: var(--borderradius);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*NGL, had to look that one up to get what I wanted. */    
+    gap: 1.5 rem;
+    align-items: center;
+}
+
+main p.gallery-intro {
+    text-align: center;
+}
+
+/* >>>> Lists <<<< */
+main ol, main ul {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+main li::marker {
+    color: var(--linkcolor);
+}
+
+/* >>>> Tables <<<< */
+table {
+    width: 100%;
+    margin: 1.5rem auto;
+    border-collapse: separate;
+    text-align: center;
+    table-layout: fixed;
+}
+
+td:nth-child(1), td:nth-child(4) {
+    text-align: left;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: var(--imageborder);
+    border-radius: var(--borderradius);
+}
+
+th {
+    background-color: var(--linkcolor);
+    color: var(--backgroundcolor);
+}
+
+caption {
+    color: var(--linkcolor);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+th:nth-child(1) {
+    width: 30%;
+}
+
+t   h:nth-child(2) {
+    width: 20%;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--altrowcolor);
+}
+
+/* >>>> Forms <<<< */
+fieldset {
+    border: var(--imageborder);
+    border-radius: var(--borderradius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: "Boogaloo", Impact, sans-serif;
+}
+
+legend {
+    color: var(--linkcolor);
+    font-size: 2rem;
+    padding: 0 0.5rem;
+    text-align: center;
+}
+
+.form-layout {
+    display: flex;
+    gap: 2rem;
+}
+
+.form-column {
+    flex: 1;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-row > label:first-child {
+    width: 160px;
+    flex-shrink: 0;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="month"],
+input[type="password"],
+input[type="number"] {
+    width: 250px;
+    padding: 0.5rem;
+    border: var(--imageborder);
+    border-radius: var(--borderradius);
+    font-size: 1rem;
+}
+
+#middle {
+    width: 50px;
+    text-align: center;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--linkcolor);
+    cursor: pointer;
+}
+
+form label {
+    cursor: pointer;
+}
+
+.phone-type {
+    padding-left: 168px;
+}
+
+.name-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+select {
+    width: 250px;
+    padding: 0.5rem;
+    border: var(--imageborder);
+    border-radius: var(--borderradius);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.centered-row {
+    justify-content: center;
+}
+
+fieldset p {
+    text-align: center;
+    margin-top: 0;
+}
+
+.small {
+    text-align: center;
+    padding: 0;
+    margin-top: -25px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+#cc1, #cc2, #cc3, #cc4 {
+    width: 65px;
+    text-align: center;
+}
+
+#zip {
+    width: 100px;
+    text-align: center;
+}
+
+#name {
+    width: 330px;
+}
+
+#ccdate {
+    width: 200px;
+}
+
+#CCV {
+    width: 65px;
+    text-align: center;
+}
+
+input[type="submit"],
+button[type="submit"] {
+    display: block;
+    margin: 1.5rem auto;
+    width: 200px;
+    padding: 0.75rem;
+    background-color: var(--linkcolor);
+    color: var(--backgroundcolor);
+    border: var(--imageborder);
+    border-radius: 999px;
+    font-family: "Boogaloo", Impact, sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus-visible,
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+    background-color: var(--hovercolor);
+}
+
+/* >>>> Footer <<<< */
+footer {
+    text-align: center;
+    color: var(--linkcolor);
+    border-top: 8px ridge var(--linkcolor);
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
